@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/sites"
+	xmlns:tns="http://www.example.org/sites" elementFormDefault="qualified">
+	<element name="sites">
+		<complexType>
+			<sequence>
+				<element name="site" maxOccurs="unbounded">
+					<complexType>
+						<sequence>
+
+							<element name="title" type="string" />
+					
+							<element name="type">
+								<simpleType>
+									<restriction base="string">
+										<enumeration value="ADS"/>
+										<enumeration value="NEWS"/>
+										<enumeration value="PORTAL"/>
+										<enumeration value="MIRROR"/>
+										</restriction>
+									</simpleType>	
+							</element>			
+
+						
+						
+							<element name="chars">
+							<complexType>
+								<sequence>
+								
+								
+								<element name="email">
+								<simpleType>
+								    <restriction base="string"> 
+     								 <pattern value="[^@]+@[^\.]+\..+"/> 
+    								</restriction>
+    							</simpleType>
+    							</element>
+								
+								<element name="news">
+								<complexType>
+									<sequence>
+										<element name="n" type="string" maxOccurs="unbounded"/>								
+									</sequence>
+									</complexType>
+								</element>
+								
+								<element name="archives">
+									<complexType>
+									<sequence>
+										<element name="a" type="string" maxOccurs="unbounded"/>								
+									</sequence>
+									</complexType>
+								</element>
+
+								<element name="votes">
+								<complexType> 
+								<sequence>
+									<element name="enable" type="boolean" />	
+									</sequence>
+									<attribute name="anonimous" type="boolean"/>
+								</complexType>		
+								
+								</element>
+								
+								
+								<element name="payment" type="boolean" />
+								
+								</sequence>
+							</complexType>	
+							
+							</element>
+								
+						<element name="authorization" type="boolean" />			
+		
+
+			</sequence>
+			<attribute name="id" type="string" use="required" />
+			</complexType>
+			</element>
+			</sequence>
+			</complexType>
+			</element>
+
+
+
+
+
+
+							
+
+</schema>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sites xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://www.example.org/sites" xsi:schemaLocation="http://www.example.org/sites sites.xsd">
+	<site id="s1">
+	
+		<title>tut.by</title>
+		
+		<type>NEWS</type>
+		
+		<chars>
+			<email>info@tut.by</email>
+			<news>
+				<n>Новость дня №1</n>
+				<n>Новость дня №2</n>
+				<n>Новость дня №3</n>
+			</news>
+			<archives>
+				<a>http://tut.by/downloads/archive1.zip</a>
+				<a>http://tut.by/downloads/archive2.zip</a>
+				<a>http://tut.by/downloads/archive3.zip</a>
+			</archives>
+			<votes anonimous="false">
+				<enable>true</enable>
+			</votes>
+			<payment>false</payment>
+		</chars>
+		<authorization>false</authorization>
+	</site>
+	
+	
+	
+	
+	<site id="s1">
+	
+		<title>tut.by</title>
+		
+		<type>NEWS</type>
+		
+		<chars>
+			<email>info@tut.by</email>
+			<news>
+				<n>Новость дня №1</n>
+				<n>Новость дня №2</n>
+				<n>Новость дня №3</n>
+			</news>
+			<archives>
+				<a>http://tut.by/downloads/archive1.zip</a>
+				<a>http://tut.by/downloads/archive2.zip</a>
+				<a>http://tut.by/downloads/archive3.zip</a>
+			</archives>
+			<votes anonimous="false">
+				<enable>true</enable>
+			</votes>
+			<payment>false</payment>
+		</chars>
+		<authorization>false</authorization>
+	</site>
+	
+
+</sites>

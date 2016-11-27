@@ -2,11 +2,8 @@
 <sites xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xmlns="http://www.example.org/sites" xsi:schemaLocation="http://www.example.org/sites sites.xsd">
 	<site id="s1">
-	
 		<title>tut.by</title>
-		
 		<type>NEWS</type>
-		
 		<chars>
 			<email>info@tut.by</email>
 			<news>
@@ -14,11 +11,6 @@
 				<n>Новость дня №2</n>
 				<n>Новость дня №3</n>
 			</news>
-			<archives>
-				<a>http://tut.by/downloads/archive1.zip</a>
-				<a>http://tut.by/downloads/archive2.zip</a>
-				<a>http://tut.by/downloads/archive3.zip</a>
-			</archives>
 			<votes anonimous="false">
 				<enable>true</enable>
 			</votes>
@@ -27,34 +19,46 @@
 		<authorization>false</authorization>
 	</site>
 	
-	
-	
-	
-	<site id="s1">
-	
-		<title>tut.by</title>
-		
-		<type>NEWS</type>
-		
+	<site id="s2">
+		<title>http://ftp.by.debian.org/</title>
+		<type>MIRROR</type>
 		<chars>
-			<email>info@tut.by</email>
-			<news>
-				<n>Новость дня №1</n>
-				<n>Новость дня №2</n>
-				<n>Новость дня №3</n>
-			</news>
+			<email>vopros@main.beltelecom.by</email>
 			<archives>
-				<a>http://tut.by/downloads/archive1.zip</a>
-				<a>http://tut.by/downloads/archive2.zip</a>
-				<a>http://tut.by/downloads/archive3.zip</a>
+				<a>http://ftp.by.debian.org/debian/</a>
+				<a>http://ftp.by.debian.org/debian-cd/</a>
+				<a>http://ftp.by.debian.org/debian-virtualbox/</a>
 			</archives>
 			<votes anonimous="false">
-				<enable>true</enable>
+				<enable>false</enable>
 			</votes>
 			<payment>false</payment>
 		</chars>
 		<authorization>false</authorization>
 	</site>
 	
-
+	<site id="s3">
+		<title>http://president.gov.by/</title>
+		<type>PORTAL</type>
+		<chars>
+			<email>press@president.gov.by</email>
+			<votes anonimous="false">
+				<enable>false</enable>
+			</votes>
+			<payment>true</payment>
+		</chars>
+		<authorization>true</authorization>
+	</site>
+	
+	<site id="s4">
+		<title>http://vitebskreklama.by/</title>
+		<type>ADS</type>
+		<chars>
+			<votes anonimous="true">
+				<enable>false</enable>
+			</votes>
+			<payment>false</payment>
+		</chars>
+		<authorization>false</authorization>
+	</site>
 </sites>

@@ -7,9 +7,7 @@
 				<element name="site" maxOccurs="unbounded">
 					<complexType>
 						<sequence>
-
 							<element name="title" type="string" />
-					
 							<element name="type">
 								<simpleType>
 									<restriction base="string">
@@ -20,72 +18,48 @@
 										</restriction>
 									</simpleType>	
 							</element>			
-
-						
-						
 							<element name="chars">
-							<complexType>
-								<sequence>
-								
-								
-								<element name="email">
-								<simpleType>
-								    <restriction base="string"> 
-     								 <pattern value="[^@]+@[^\.]+\..+"/> 
-    								</restriction>
-    							</simpleType>
-    							</element>
-								
-								<element name="news">
 								<complexType>
-									<sequence>
-										<element name="n" type="string" maxOccurs="unbounded"/>								
-									</sequence>
-									</complexType>
-								</element>
-								
-								<element name="archives">
-									<complexType>
-									<sequence>
-										<element name="a" type="string" maxOccurs="unbounded"/>								
-									</sequence>
-									</complexType>
-								</element>
-
-								<element name="votes">
-								<complexType> 
-								<sequence>
-									<element name="enable" type="boolean" />	
-									</sequence>
-									<attribute name="anonimous" type="boolean"/>
-								</complexType>		
-								
-								</element>
-								
-								
-								<element name="payment" type="boolean" />
-								
-								</sequence>
-							</complexType>	
-							
-							</element>
-								
-						<element name="authorization" type="boolean" />			
-		
-
+									<all>
+										<element name="email" minOccurs="0">
+											<simpleType>
+								    			<restriction base="string"> 
+     								 				<pattern value="[^@]+@[^\.]+\..+"/> 
+    											</restriction>
+    										</simpleType>
+    									</element>
+										<element name="news" minOccurs="0">
+											<complexType>
+												<sequence>
+													<element name="n" type="string" maxOccurs="unbounded"/>								
+												</sequence>
+											</complexType>
+										</element>
+										<element name="archives" minOccurs="0">
+											<complexType>
+												<sequence>
+													<element name="a" type="string" maxOccurs="unbounded"/>								
+												</sequence>
+											</complexType>
+										</element>
+										<element name="votes">
+											<complexType> 
+												<sequence>
+													<element name="enable" type="boolean" />	
+												</sequence>
+											<attribute name="anonimous" type="boolean"/>
+											</complexType>		
+										</element>
+										<element name="payment" type="boolean" />
+									</all>
+								</complexType>	
+							</element>	
+							<element name="authorization" type="boolean" />			
+						</sequence>
+						<attribute name="id" type="string" use="required" />
+					</complexType>
+				</element>
 			</sequence>
-			<attribute name="id" type="string" use="required" />
-			</complexType>
-			</element>
-			</sequence>
-			</complexType>
-			</element>
-
-
-
-
-
-
-							
-
+		</complexType>
+	</element>
 </schema>

@@ -36,7 +36,7 @@
 		</chars>
 		<authorization>false</authorization>
 	</site>
-	
+
 	<site id="s3">
 		<title>http://president.gov.by/</title>
 		<type>PORTAL</type>
@@ -49,7 +49,7 @@
 		</chars>
 		<authorization>true</authorization>
 	</site>
-	
+
 	<site id="s4">
 		<title>http://vitebskreklama.by/</title>
 		<type>ADS</type>

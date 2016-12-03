@@ -1,7 +1,5 @@
 package domain;
 
-import java.util.ArrayList;
-
 public class Site implements Comparable<Site> {
     private String id;
     private String title;

@@ -19,34 +19,53 @@ public class SiteXmlReader {
     public List<Site> read(String fileName) throws FileNotFoundException {
         
         XMLStreamReader reader = null;
+        String value="";
         try {
             List<Site> sites = new ArrayList<Site>();
             Site site = null;
             XMLInputFactory factory = XMLInputFactory.newFactory();
             reader = factory.createXMLStreamReader(new FileInputStream(fileName));
             while (reader.hasNext()) {
+               // System.out.println(reader.getLocalName()+"  111111111");
                 int elementType = reader.next();
+               // System.out.println(reader.getLocalName()+"  22222222222");
+                
+                System.out.println(reader.getPrefix()+"  22222222222");
+                
+                
                 
                 switch (elementType) {
+                case 4: {
+                    System.out.println("  4444");
+                    break;
+                }
                 case XMLStreamConstants.START_ELEMENT: {
-                    String tagName = reader.getLocalName();
-                    String value;
+                    
+                    String tagName = reader.getLocalName(); //?????????????????????/ НЕ ЧИТАЕТ SITE!!!!!!!!!
+                    
                     try {
                         value = reader.getElementText();
                     } catch (Exception e) {
                         // TODO Auto-generated catch block
                         e.printStackTrace();
+                        //value="";  //break;///////////////////////////!!!
                     } finally {
-                        value="";
+                        //value=""; //break;///////////////////////////!!!
                     }
 
                     switch (tagName) {   
                         case "site": {
-                            site = new Site();
+                            site = new Site(); /// не создан объект
                             site.setId(reader.getAttributeValue(null, "id"));
                             break; }
-                        case "title":         {site.setTitle(value); break;}
-                        case "type":          {site.setType(value); break;}     
+                        case "title":         {
+                            System.out.println("!!1!!!");
+                            String sss=reader.getElementText(); ///????? Exception??????????????????????????????
+                            System.out.println(sss);
+                            site.setTitle(reader.getElementText()); 
+                            System.out.println("!!2!!!"); break;}
+                        case "type":          {site.setType(value); break;
+                        }     
                         case "email":         {site.chars.setEmail(value); break;}
                         case "n":
                         case "a":             {site.chars.addElement(value); break;}
@@ -54,21 +73,26 @@ public class SiteXmlReader {
                                 reader.getAttributeValue(null, "anonimous"))); break;}
                         case "enable":        {site.chars.setVotes(Boolean.parseBoolean(value)); break;}
                         case "payment":       {site.chars.setPayment(Boolean.parseBoolean(value)); break;}
-                        case "authorization": {site.setAuthorization(Boolean.parseBoolean(value));};
-                    }
-                }
-                break;
-                
-                case XMLStreamConstants.END_ELEMENT: {
-                    String tagName = reader.getLocalName();
-                    if ("site".equals(tagName)) {
-                        sites.add(site);
+                        case "authorization": {site.setAuthorization(Boolean.parseBoolean(value)); break;}
                     }
                     break;
                 }
+                
+                
+                case XMLStreamConstants.END_ELEMENT: {
+                    //String tagName = reader.getLocalName();
+                    if ("site".equals(reader.getLocalName())) {
+                        sites.add(site);
+                    }
+                break;
+                }
             }
+                
+        
         }
         return sites;
+        
+        
             
         } catch (XMLStreamException e) {
             return null;
@@ -77,6 +101,7 @@ public class SiteXmlReader {
                 reader.close();
             } catch (Exception e) {}   
         }
+        //return null;
     }
 }     
   

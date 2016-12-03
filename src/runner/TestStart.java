@@ -1,11 +1,8 @@
 package runner;
 
+import java.util.List;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.util.Collections;
-import java.util.List;
-import java.util.Random;
-
 import domain.Site;
 import xml.SiteXmlReader;
 import xml.SiteXmlValidator;
@@ -13,11 +10,7 @@ import xml.SiteXmlValidator;
 
 public class TestStart {
 
-    
-    /// тута пингвинь!!!!!!!!!!
-    ///               
-    
-    
+       
     public static void main(String[] args) throws FileNotFoundException, IOException {
         SiteXmlValidator validator = new SiteXmlValidator("sites.xml");
         if (validator.validate()) {
@@ -28,9 +21,9 @@ public class TestStart {
             //    site.setCost((long) (site.getCost() * (1 + random.nextInt(100)/100.0)));
             //}
             //Collections.sort(sites);
-            for (Site site : sites) {
-                System.out.println(site.toString());
-            }
+//            for (Site site : sites) {
+ //               System.out.println(site.toString());
+//            }
         } else {
             System.out.println(validator.getError());
         }

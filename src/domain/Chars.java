@@ -6,8 +6,9 @@ public class Chars {
     private String email;
     private boolean votes;
     private boolean anonimous;
+    private ArrayList<String> elements=new ArrayList<String>();  /// переделать на элементс в чарс с геттерами
     private boolean payment;
-    private ArrayList<String> elements;  /// переделать на элементс в чарс с геттерами
+    
     
     public String getEmail() {
         return email;
@@ -31,6 +32,14 @@ public class Chars {
     public boolean isPayment() {
         return payment;
     }
+    
+    public ArrayList<String> getElements() {
+        return elements;
+    }
+    public void addElement(String element) {
+        elements.add(element);
+    }
+    
     public void setPayment(boolean payment) {
         this.payment = payment;
     }

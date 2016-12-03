@@ -19,7 +19,7 @@ public class Archives extends Chars {
             StringBuilder str = new StringBuilder();
             
             for (String n : archives) {
-                str.append("Ссылка на скачивание №: ").append(archives.iterator()).append(n).append('\n');
+                str.append("Новость дня №: ").append(archives.iterator()).append(n).append('\n');
             }
             return str.toString(); 
         }

@@ -8,6 +8,10 @@ public enum Type {
         public String getType() {
             return type;
         }
+        
+        public void setType(String type) {
+            this.type=type;
+        }
 
         private Type(String type) {
             this.type = type;

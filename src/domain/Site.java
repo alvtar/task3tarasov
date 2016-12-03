@@ -7,8 +7,20 @@ public class Site implements Comparable<Site> {
     private String title;
     private Type type;
     //private Set<Chars> chars = new LinkedHashSet<Chars>();
-    private ArrayList<Chars> chars = new ArrayList<Chars>();
+    public Chars chars = new Chars();
     
+    
+    
+    
+    
+    //public void setChars(ArrayList<Chars> chars) {
+    //    this.chars = chars;
+    //}
+
+
+
+
+
     private boolean authorization;
 
     public String getId() {
@@ -22,9 +34,13 @@ public class Site implements Comparable<Site> {
     public String getTitle() {
         return title;
     }
+    
+    public void setTitle(String title) {
+        this.title=title;
+    }
 
-    public void setType(Type type) {
-        this.type = type;
+    public void setType(String type) {
+        this.type.setType(type);
     }
 
     public String getType() {
@@ -46,7 +62,7 @@ public class Site implements Comparable<Site> {
         str.append("Название страницы: ").append(getTitle()).append('\n');
         str.append("Тип страницы: ").append(getType()).append('\n');
         str.append("Характеристика сайта:\n");
-        str.append(getChars().toString());
+        //str.append(getChars().toString());
         str.append("Авторизация: ").append(getAuthorization()).append('\n');
         
         
@@ -90,9 +106,7 @@ public class Site implements Comparable<Site> {
 
     
     
-    private String getChars() {
-        return chars.toString();
-    }
+
 
     
     

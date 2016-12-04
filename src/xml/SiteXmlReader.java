@@ -4,12 +4,10 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
-
 import javax.xml.stream.XMLInputFactory;
 import javax.xml.stream.XMLStreamConstants;
 import javax.xml.stream.XMLStreamException;
 import javax.xml.stream.XMLStreamReader;
-
 import domain.*;
 
 
@@ -21,19 +19,17 @@ public class SiteXmlReader {
         try {
             List<Site> sites = new ArrayList<Site>();
             Site site = null;
-
             XMLInputFactory factory = XMLInputFactory.newFactory();
             reader = factory.createXMLStreamReader(new FileInputStream(fileName));
+            
             while (reader.hasNext()) {
-
-                int elementType = reader.next();
-
+                
+                int elementType = reader.next();        
                 switch (elementType) {
-
-                case XMLStreamConstants.START_ELEMENT: {
+                
+                case XMLStreamConstants.START_ELEMENT: {   
                     
                     String tagName = reader.getLocalName();
-
                     switch (tagName) {   
                         case "site":          {site = new Site(); site.setId(reader.getAttributeValue(null, "id")); break;}
                         case "title":         {site.setTitle(reader.getElementText()); break;}

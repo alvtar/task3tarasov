@@ -2,24 +2,21 @@ package xml;
 
 import java.io.File;
 import java.io.IOException;
-
 import javax.xml.XMLConstants;
 import javax.xml.transform.stream.StreamSource;
 import javax.xml.validation.Schema;
 import javax.xml.validation.SchemaFactory;
 import javax.xml.validation.Validator;
-
 import org.xml.sax.SAXException;
 import org.xml.sax.SAXParseException;
 import org.xml.sax.helpers.DefaultHandler;
 
+
 public class SiteXmlValidator extends DefaultHandler { 
     public static final String SCHEMA_FILE_NAME = "sites.xsd";
-
     private StringBuilder error = new StringBuilder();
-
     private String fileName;
-
+    
     public SiteXmlValidator(String fileName) {
         this.fileName = fileName;
     }
@@ -69,5 +66,4 @@ public class SiteXmlValidator extends DefaultHandler {
             return false;
         }
     }
-
 }

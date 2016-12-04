@@ -75,12 +75,7 @@ public class Chars {
              str.append("Платный");
          } else str.append("Бесплатный");
          str.append('\n'); 
-         
-        //if (email!=null) {
-        //    str.append("Е-мейл: ").append(email).append('\n');
-        //}
 
-        return str.toString();
-        
+        return str.toString();   
     }
 }

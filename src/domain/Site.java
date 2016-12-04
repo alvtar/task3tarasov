@@ -52,7 +52,6 @@ public class Site implements Comparable<Site> {
             str.append("необходима");
         } else str.append("нет");
         str.append('\n');
-        
         return str.toString();   
     }
 

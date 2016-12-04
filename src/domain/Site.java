@@ -4,21 +4,7 @@ public class Site implements Comparable<Site> {
     private String id;
     private String title;
     private Type type;
-    //private Set<Chars> chars = new LinkedHashSet<Chars>();
     public Chars chars = new Chars();
-    
-    
-    
-    
-    
-    //public void setChars(ArrayList<Chars> chars) {
-    //    this.chars = chars;
-    //}
-
-
-
-
-
     private boolean authorization;
 
     public String getId() {
@@ -45,7 +31,7 @@ public class Site implements Comparable<Site> {
         return type.getType();
     }
 
-    public boolean getAuthorization() {
+    public boolean isAuthorization() {
         return authorization;
     }
 
@@ -60,56 +46,16 @@ public class Site implements Comparable<Site> {
         str.append("Название страницы: ").append(getTitle()).append('\n');
         str.append("Тип страницы: ").append(getType()).append('\n');
         str.append("Характеристика сайта:\n");
-        //str.append(getChars().toString());
-        str.append("Авторизация: ").append(getAuthorization()).append('\n');
+        str.append(chars.toString());
+        str.append("Авторизация: ");
+        if (isAuthorization()) {
+            str.append("необходима");
+        } else str.append("нет");
+        str.append('\n');
         
-        
-        /*switch (type.getType()) {
-        ////////////////////////////делай тута!!!!!!!!!!!!!!!!!
-            case "NEWS": {
-            //    str.append('\t').append(chars.toArray(). getEmail()).append(": ").append(chars.getValue()).append('\n');
-            //    for (Chars chars : getChars()) {
-            //    str.append('\t').append(chars.getName()).append(": ").append(chars.getValue()).append('\n');
-            //    }
-            //    str.append("Стоимость: ").append(getCost()).append('\n');
-                
-                //chars.g
-                for (Chars chars : getChars()) {
+        return str.toString();   
+    }
 
-                
-            //    return str.toString();
-            //    break;
-            }
-            case "MIRROR": {
-                
-                break;
-            }
-            case "PORTAL": {
-                
-                break;
-            }
-            case "ADS": {
-                
-                //return str.toString();
-            }
-            
-        }
-        str.append("Авторизация:\n");
-        */
-        
-        return str.toString();
-            
-        }
-    
-
-    
-    
-
-
-    
-    
-    
-    
     @Override
     public int compareTo(Site site) {
         return getType().compareTo(site.getType());

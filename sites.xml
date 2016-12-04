@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <sites xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xmlns="http://www.example.org/sites" xsi:schemaLocation="http://www.example.org/sites sites.xsd">
+	
 	<site id="s1"> 
-		<title>tutuuuuuuuuu.by</title>
+		<title>tut.by</title>
 		<type>NEWS</type>
 		<chars>
 			<email>info@tut.by</email>
@@ -18,7 +19,8 @@
 		</chars>
 		<authorization>false</authorization>
 	</site>
-	<site id="a&amp;2">
+	
+	<site id="s2">
 		<title>http://ftp.by.debian.org/</title>
 		<type>MIRROR</type>
 		<chars>
@@ -35,26 +37,28 @@
 		</chars>
 		<authorization>false</authorization>
 	</site>
-	<site id="a&amp;3">
+	
+	<site id="s3">
 		<title>http://president.gov.by/</title>
 		<type>PORTAL</type>
 		<chars>
 			<email>press@president.gov.by</email>
 			<votes anonimous="false">
-				<enable>false</enable>
+				<enable>true</enable>
 			</votes>
 			<payment>true</payment>
 		</chars>
 		<authorization>true</authorization>
 	</site>
-	<site id="a&amp;4">
+	
+	<site id="s4">
 		<title>http://vitebskreklama.by/</title>
 		<type>ADS</type>
 		<chars>
 			<votes anonimous="true">
-				<enable>false</enable>
+				<enable>true</enable>
 			</votes>
-			<payment>false</payment>
+			<payment>true</payment>
 		</chars>
 		<authorization>false</authorization>
 	</site>

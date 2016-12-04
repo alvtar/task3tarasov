@@ -11,12 +11,11 @@ import org.xml.sax.SAXException;
 import org.xml.sax.SAXParseException;
 import org.xml.sax.helpers.DefaultHandler;
 
-
-public class SiteXmlValidator extends DefaultHandler { 
+public class SiteXmlValidator extends DefaultHandler {
     public static final String SCHEMA_FILE_NAME = "sites.xsd";
     private StringBuilder error = new StringBuilder();
     private String fileName;
-    
+
     public SiteXmlValidator(String fileName) {
         this.fileName = fileName;
     }

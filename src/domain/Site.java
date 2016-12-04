@@ -18,13 +18,13 @@ public class Site implements Comparable<Site> {
     public String getTitle() {
         return title;
     }
-    
+
     public void setTitle(String title) {
-        this.title=title;
+        this.title = title;
     }
 
     public void setType(Type type) {
-        this.type=type;
+        this.type = type;
     }
 
     public String getType() {
@@ -50,9 +50,10 @@ public class Site implements Comparable<Site> {
         str.append("Авторизация: ");
         if (isAuthorization()) {
             str.append("необходима");
-        } else str.append("нет");
+        } else
+            str.append("нет");
         str.append('\n');
-        return str.toString();   
+        return str.toString();
     }
 
     @Override

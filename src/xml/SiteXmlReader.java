@@ -10,10 +10,9 @@ import javax.xml.stream.XMLStreamException;
 import javax.xml.stream.XMLStreamReader;
 import domain.*;
 
-
 public class SiteXmlReader {
 
-    public List<Site> read(String fileName) throws FileNotFoundException { 
+    public List<Site> read(String fileName) throws FileNotFoundException {
         XMLStreamReader reader = null;
 
         try {
@@ -21,47 +20,75 @@ public class SiteXmlReader {
             Site site = null;
             XMLInputFactory factory = XMLInputFactory.newFactory();
             reader = factory.createXMLStreamReader(new FileInputStream(fileName));
-            
+
             while (reader.hasNext()) {
-                
-                int elementType = reader.next();        
+
+                int elementType = reader.next();
                 switch (elementType) {
-                
-                case XMLStreamConstants.START_ELEMENT: {   
-                    
+
+                case XMLStreamConstants.START_ELEMENT: {
+
                     String tagName = reader.getLocalName();
-                    switch (tagName) {   
-                        case "site":          {site = new Site(); site.setId(reader.getAttributeValue(null, "id")); break;}
-                        case "title":         {site.setTitle(reader.getElementText()); break;}
-                        case "type":          {site.setType(Type.valueOf(reader.getElementText())); break;}     
-                        case "email":         {site.chars.setEmail(reader.getElementText()); break;}
-                        case "n":
-                        case "a":             {site.chars.addElement(reader.getElementText()); break;}
-                        case "votes":         {site.chars.setAnonimous(Boolean.parseBoolean(
-                                reader.getAttributeValue(null, "anonimous"))); break;}
-                        case "enable":        {site.chars.setVotes(Boolean.parseBoolean(reader.getElementText())); break;}
-                        case "payment":       {site.chars.setPayment(Boolean.parseBoolean(reader.getElementText())); break;}
-                        case "authorization": {site.setAuthorization(Boolean.parseBoolean(reader.getElementText())); break;}
+                    switch (tagName) {
+                    case "site": {
+                        site = new Site();
+                        site.setId(reader.getAttributeValue(null, "id"));
+                        break;
+                    }
+                    case "title": {
+                        site.setTitle(reader.getElementText());
+                        break;
+                    }
+                    case "type": {
+                        site.setType(Type.valueOf(reader.getElementText()));
+                        break;
+                    }
+                    case "email": {
+                        site.chars.setEmail(reader.getElementText());
+                        break;
+                    }
+                    case "n":
+                    case "a": {
+                        site.chars.addElement(reader.getElementText());
+                        break;
+                    }
+                    case "votes": {
+                        site.chars.setAnonimous(Boolean.parseBoolean(reader.getAttributeValue(null, "anonimous")));
+                        break;
+                    }
+                    case "enable": {
+                        site.chars.setVotes(Boolean.parseBoolean(reader.getElementText()));
+                        break;
+                    }
+                    case "payment": {
+                        site.chars.setPayment(Boolean.parseBoolean(reader.getElementText()));
+                        break;
+                    }
+                    case "authorization": {
+                        site.setAuthorization(Boolean.parseBoolean(reader.getElementText()));
+                        break;
+                    }
                     }
                     break;
                 }
-  
+
                 case XMLStreamConstants.END_ELEMENT: {
                     if ("site".equals(reader.getLocalName())) {
                         sites.add(site);
                     }
-                break;
+                    break;
+                }
                 }
             }
-        }
-        return sites;
+            return sites;
 
         } catch (XMLStreamException e) {
             return null;
         } finally {
             try {
                 reader.close();
-            } catch (Exception e) {}   
+            } catch (Exception e) {
+            }
         }
     }
-}     
+}

@@ -15,7 +15,6 @@ import domain.Site;
 import xml.SiteXmlReader;
 import xml.SiteXmlValidator;
 
-
 public class TestStart {
 
     public static void main(String[] args) throws FileNotFoundException, IOException {
@@ -25,13 +24,13 @@ public class TestStart {
             List<Site> sites = reader.read("sites.xml");
 
             Collections.sort(sites);
-            
+
             System.out.println("СОРТИРОВКА ПО ТИПУ СТРАНИЦЫ \n");
             for (Site site : sites) {
                 System.out.println(site.toString());
             }
-            
-        } else 
+
+        } else
             System.out.println(validator.getError());
     }
 }

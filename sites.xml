@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <sites xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xmlns="http://www.example.org/sites" xsi:schemaLocation="http://www.example.org/sites sites.xsd">
-	<site id="a&amp;1">
+	<site id="s1"> 
 		<title>tutuuuuuuuuu.by</title>
 		<type>NEWS</type>
 		<chars>

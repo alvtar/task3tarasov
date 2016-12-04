@@ -21,9 +21,9 @@ public class TestStart {
             //    site.setCost((long) (site.getCost() * (1 + random.nextInt(100)/100.0)));
             //}
             //Collections.sort(sites);
-//            for (Site site : sites) {
- //               System.out.println(site.toString());
-//            }
+            for (Site site : sites) {
+                System.out.println(site.toString());
+            }
         } else {
             System.out.println(validator.getError());
         }

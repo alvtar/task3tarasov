@@ -37,8 +37,8 @@ public class Site implements Comparable<Site> {
         this.title=title;
     }
 
-    public void setType(String type) {
-        this.type.setType(type);
+    public void setType(Type type) {
+        this.type=type;
     }
 
     public String getType() {

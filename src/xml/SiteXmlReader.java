@@ -48,7 +48,7 @@ public class SiteXmlReader {
                             site.setId(reader.getAttributeValue(null, "id"));
                             break; }
                         case "title":         {site.setTitle(reader.getElementText()); break;}
-                        case "type":          {site.setType(reader.getElementText()); break;}     
+                        case "type":          {site.setType(Type.valueOf(reader.getElementText())); break;}     
                         case "email":         {site.chars.setEmail(reader.getElementText()); break;}
                         case "n":
                         case "a":             {site.chars.addElement(reader.getElementText()); break;}
